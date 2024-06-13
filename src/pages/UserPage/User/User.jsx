@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { asyncFunctionOne } from "../../reduxjs/actions";
+import { asyncFunctionOne } from "../../../reduxjs/actions";
 import { useDispatch } from "react-redux";
 
 const User = ({ info }) => {
@@ -13,7 +13,6 @@ const User = ({ info }) => {
         <button
           onClick={() => {
             dispatch(asyncFunctionOne(info.id));
-            console.log(info.id);
           }}
         >
           more info

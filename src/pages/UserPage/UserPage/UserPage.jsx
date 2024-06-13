@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncFunctionFetch } from "../../reduxjs/actions";
-import User from "./User";
+import { asyncFunctionFetch } from "../../../reduxjs/actions";
+import User from "../User/User";
 
 const UserPage = () => {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
 import React from "react";
 
-import UserPage from "./pages/UserPage/UserPage";
+import UserPage from "./pages/UserPage/UserPage/UserPage";
 import { Route, BrowserRouter, Routes, useParams } from "react-router-dom";
-import UsersPage from "./pages/UserPage/UsersPage";
+import UsersPage from "./pages/UserPage/UsersPage/UsersPage";
 import { useSelector } from "react-redux";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<UserPage />} />
-        <Route path="/users/:id" element={<UsersPage users={users} />} />
+        <Route path="/user/:id" element={<UsersPage users={users} />} />
       </Routes>
     </BrowserRouter>
   );
