@@ -1,18 +1,16 @@
 import React from "react";
-
-import UserPage from "./pages/UserPage/UserPage/UserPage";
-import { Route, BrowserRouter, Routes, useParams } from "react-router-dom";
-import UsersPage from "./pages/UserPage/UsersPage/UsersPage";
-import { useSelector } from "react-redux";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Menu from "./UI/Menu/Menu";
+import MainPage from "./pages/MainPage/MainPage";
+import UserPage from "./pages/UsersPage/UserPage";
 const App = () => {
-  const users = useSelector((state) => state.fetchUsers.users);
-
   return (
     <BrowserRouter>
+      <Menu />
       <Routes>
-        <Route path="/" element={<UserPage />} />
-        <Route path="/user/:id" element={<UsersPage users={users} />} />
+        <Route index element={<MainPage />} />
+        <Route path="/users" element={<UserPage />} />
       </Routes>
     </BrowserRouter>
   );
