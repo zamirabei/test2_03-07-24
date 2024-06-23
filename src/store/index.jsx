@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import PostSlice from "./PostSlice";
-import fetchReducer from "./fetchSlice";
+import postSlice from "./PostSlice";
+import productsReduser from "./Secondslice";
 
 export const store = configureStore({
   reducer: {
-    PostSlice,
-    fetchReducer,
+    postSlice,
   },
 });

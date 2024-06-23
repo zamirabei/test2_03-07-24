@@ -1,26 +1,28 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+
+export const getProducts = createAsyncThunk(
+  "getProducts",
+   async function (_,{dispatch})
+   {
+      const responsed = await fetch ("https://fakestoreapi.com/products/")
+      const data = await responsed.json()
+      dispatch(getProductTwo(data))
+   }
+)
+
 const postSlice = createSlice({
-  name: "Post Slice",
+  name: "productsreducer",
   initialState: {
-    count: 0,
-    posts: [],
+      products: []
   },
   reducers: {
-    postsBack: (state, action) => {
-      state.posts = action.payload;
-    },
-    increment: (state, action) => {
-      state.count += action.payload;
-    },
-    decrement: (state, action) => {
-      state.count = Math.max(state.count - action.payload, 0);
-    },
-    reset: (state) => {
-      state.count = 0;
-    },
-  },
+      getProductTwo: (state, action) => {
+          state.products = action.payload
+      }
+  }
+
 });
 
-export const { postsBack, increment, decrement, reset } = postSlice.actions;
+export const {getProductTwo} = postSlice.actions;
 export default postSlice.reducer;
