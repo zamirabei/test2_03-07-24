@@ -1,11 +1,11 @@
-// import MainPage from "./pages/MainPage/MainPage";
-import UserPage from "../src/pages/UserPage/UserPage";
+import React from "react";
+import RegisterForm from "./components/RegisterForm";
 
 const App: React.FC = () => {
   return (
     <div>
-      {/* <MainPage /> */}
-      <UserPage />
+      <h1>Регистрация пользователей сайтв</h1>
+      <RegisterForm />
     </div>
   );
 };
